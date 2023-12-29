@@ -3,10 +3,10 @@
     "targetDebugPort": "1234", 
     "targetSshPort": "22", 
     "targetUser": "seb", 
-    "sourceDirectory": "E:/Privat/Modellbahnsteuerung/Code", 
-    "targetWorkingDirectory": "/home/seb/Modellbahnsteuerung",
+    "sourceDirectory": "E:/Privat/ModelTrainControl/Code", 
+    "targetWorkingDirectory": "/home/seb/ModelTrainControl",
     "executablePath": "${config:targetWorkingDirectory}/Code",
-    "executableName": "Modellbahnsteuerung.py",
+    "executableName": "ModelTrainControl.py",
 
     // Individual Part
     "editor.bracketPairColorization.enabled": true,
