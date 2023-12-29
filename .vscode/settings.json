@@ -1,0 +1,15 @@
+{
+    "targetHostname": "192.168.44.90", 
+    "targetDebugPort": "1234", 
+    "targetSshPort": "22", 
+    "targetUser": "seb", 
+    "sourceDirectory": "E:/Privat/Modellbahnsteuerung/Code", 
+    "targetWorkingDirectory": "/home/seb/Modellbahnsteuerung",
+    "executablePath": "${config:targetWorkingDirectory}/Code",
+    "executableName": "Modellbahnsteuerung.py",
+
+    // Individual Part
+    "editor.bracketPairColorization.enabled": true,
+    "editor.matchBrackets": "always",   
+}
+

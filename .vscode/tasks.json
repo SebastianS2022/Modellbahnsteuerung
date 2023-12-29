@@ -1,0 +1,68 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Deploy to Raspi",
+            "command": "pscp",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "args": [
+                "-r",
+                "-scp",
+                "-P",
+                "${config:targetSshPort}",
+                "-pw",
+                "seb",
+                "${config:sourceDirectory}",
+                "${config:targetUser}@${config:targetHostname}:${config:targetWorkingDirectory}"
+            ],
+            "type": "shell",
+            "problemMatcher": []
+        },
+        {
+            "label": "Start Modellbahnsteuerung",
+            "command": "plink",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "args": [
+                "-batch",
+                "-t",
+                "-P",
+                "${config:targetSshPort}",
+                "-pw",
+                "seb",
+                "${config:targetUser}@${config:targetHostname}",
+                ". ~/.profile; cd ${config:executablePath}; chmod a+x ${config:executableName}; python3 ./${config:executableName};"
+            ],
+            "type": "shell",
+            "problemMatcher": []
+        },
+        {
+            "label": "Deploy and Start",
+            "dependsOn": ["Deploy to Raspi", "Start Modellbahnsteuerung"],
+            "dependsOrder": "sequence",
+            "problemMatcher": []
+        },
+
+    ],
+    "inputs": [
+        {
+          "type": "promptString",
+          "id": "passwordPrompt",
+          "description": "Enter remote password.",
+          "default": "seb"
+        }
+    ],
+}
