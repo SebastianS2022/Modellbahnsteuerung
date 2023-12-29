@@ -16,7 +16,7 @@ print("Press Enter to continue")
 print("Button state: " + str(switch.value))
 input()
 
-trackSwitch = TrackSwitch("tw1r")
+trackSwitch = TrackSwitch("ts1r")
 print("Button state: " + str(switch.value))
 
 switch.wait_for_inactive(None) 
