@@ -1,5 +1,5 @@
 import xml.etree.ElementTree as ET
-class GpioMapper:
+class GPIOMapper:
     gpioOutputDictionary = {
         #train switch name and left/right, GPIO number
         "ts1r": 14,
@@ -7,6 +7,6 @@ class GpioMapper:
     }
 
     def __init__(self, config):
-        xmlConfig = ET.parse
+        xmlConfig = ET.parse(config)
         xmlRoot = xmlConfig.getroot()
 

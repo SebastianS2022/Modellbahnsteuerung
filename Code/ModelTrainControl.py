@@ -1,3 +1,4 @@
+import os
 from gpiozero import LED
 from gpiozero import DigitalInputDevice
 #from gpiozero import DigitalOutputDevice
@@ -7,6 +8,9 @@ from GpioMapping import *
 
 from time import sleep
 from signal import pause
+
+wd = os.getcwd()
+gpioMapper = GPIOMapper(wd + "ModelTrainControlConfig.xml")    
 
 # led = LED(14)
 switch = DigitalInputDevice(18, True)
